@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'quicksand';
+    src: url(fonts/quicksand/Quicksand_Light.otf);
+    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'code';
+    src: url(fonts/code/CODE\ Bold.otf);
+}
+
+
+html,body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 10px;
+    background: rgb(105, 105, 105);
+    font-family: code;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.main-header {
+    flex: 0 1 auto;
+}
+
+.main-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    color: rgb(165, 165, 165);
+    background: rgb(56, 56, 56);
+
+    font-family: quicksand;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+
+}
+
+.thumbnail-list {
+    flex: 0 1 auto;
+    order: 2;
+    display: flex;
+    
+    justify-content: space-between;
+    list-style: none;
+    padding: 20px 20px;
+    overflow: auto;
+    white-space: nowrap;
+    
+    margin-top: 2%;
+}
+
+.thumbnail-item {
+    display: inline-block;
+    min-width: 120px;
+    max-width: 120px;
+
+    transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+    transform: scale(1.2);
+}
+
+.thumbnail-title {
+    display: block;
+    margin: 0;
+    padding: 15px 10px;
+
+    color: rgb(165, 165, 165);
+    background: rgb(56, 56, 56);
+
+    font-size: 15px;
+}
+
+.thumbnail-image {
+    display: block;
+    width: 100%;
+}
+
+.detail-image-container {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image-frame {
+    position: relative;
+    text-align: center;
+}
+
+.detail-image {
+    width: 90%;
+}
+
+.detail-image-title {
+    position: absolute;
+    bottom: -16px;
+    left: 3%;
+
+    color: white;
+    font-family: quicksand;
+    font-size: 50px;
+}
+
+.hidden-detail .detail-image-container {
+    display: none;
+}
+
+.hidden-detail .thumbnail-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+    max-width: 80%;
+}
+
+@media all and (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .thumbnail-list {
+        flex-direction: column;
+        order: 0;
+        margin-left: 10px;
+        min-width: 20%;
+
+        padding: 0 35px;
+    }
+
+    .thumbnail-item {
+        max-width: 260px;
+        margin-right: 10px;
+    }
+
+    .thumbnail-item + .thumbnail-item {
+        margin-top: 20px;
+    }
+}
